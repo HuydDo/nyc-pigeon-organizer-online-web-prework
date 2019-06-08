@@ -8,7 +8,6 @@ def nyc_pigeon_organizer(data)
 					hash[name] ||= {} #set empty array if hash doesn't have a key, otherwise just take existing key:value
 					# hash[name] = {}
           hash[name][:gender] = [gender.to_s]
-					# puts "#{hash}"
 				end
 			end
 		end
@@ -19,9 +18,23 @@ def nyc_pigeon_organizer(data)
       value_hash.each do |color,name_arr|
 				puts "#{color},#{name_arr}"
         name_arr.each do |name|
-         	if hash[name]
-						hash[name][:color] ||= []
+         	if hash[name] 
+						hash[name][:color] ||= [] #set empty array if hash doesn't have a key, otherwise just take existing key:value
           	hash[name][:color] << color.to_s
+         	end
+        end
+      end
+    end
+  end
+
+	data.each do |attribute,value_hash|
+    if attribute == :lives
+      value_hash.each do |location,name_arr|
+				puts "#{location},#{name_arr}"
+        name_arr.each do |name|
+         	if hash[name] 
+						hash[name][:lives] ||= [] #set empty array if hash doesn't have a key, otherwise just take existing key:value
+          	hash[name][:lives] << location
          	end
         end
       end
