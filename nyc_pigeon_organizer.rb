@@ -19,7 +19,7 @@ def nyc_pigeon_organizer(data)
       value_hash.each do |color,name_arr|
 				puts "#{color},#{name_arr}"
         name_arr.each do |name|
-         	if hash[name] 
+         	if hash[name]
 						hash[name][:color] ||= []
           	hash[name][:color] << color.to_s
          	end
