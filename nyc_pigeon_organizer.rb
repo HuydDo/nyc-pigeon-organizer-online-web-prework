@@ -16,7 +16,7 @@ def nyc_pigeon_organizer(data)
   data.each do |attribute,value_hash|
     if attribute == :color
       value_hash.each do |color,name_arr|
-				puts "#{color},#{name_arr}"
+				# puts "#{color},#{name_arr}"
         name_arr.each do |name|
          	if hash[name]
 						hash[name][:color] ||= [] #set empty array if hash doesn't have a key, otherwise just take existing key:value
@@ -30,7 +30,7 @@ def nyc_pigeon_organizer(data)
 	data.each do |attribute,value_hash|
     if attribute == :lives
       value_hash.each do |location,name_arr|
-				puts "#{location},#{name_arr}"
+				# puts "#{location},#{name_arr}"
         name_arr.each do |name|
          	if hash[name]
 						hash[name][:lives] ||= [] #set empty array if hash doesn't have a key, otherwise just take existing key:value
